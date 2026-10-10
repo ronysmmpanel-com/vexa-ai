@@ -1,21 +1,43 @@
 # VEXA AI
 
-Premium personal AI assistant with a responsive website and Android-ready app shell.
+Premium personal AI assistant with responsive website and Android-ready app shell.
 
-## Setup
+## Project status
+
+- Frontend website: ready
+- App shell: ready
+- Android APK: not built yet
+- Live deployment: not published yet
+- AI backend: requires secure configuration
+
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Build static site
 
 ```bash
 npm run build
 ```
 
-## Android
+## Deploy to Vercel
+
+1. Push repo to GitHub
+2. Import project in Vercel
+3. Set framework to Vite
+4. Build command: `npm run build`
+5. Output directory: `dist`
+
+## Deploy to Netlify
+
+1. Import repo
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+
+## Android APK
 
 ```bash
 npm run build
@@ -24,10 +46,8 @@ npx cap sync android
 npx cap open android
 ```
 
-## Environment
+Then open Android Studio and generate the APK or AAB.
 
-Copy `.env.example` and fill values.
+## Real deployment note
 
-## Status
-
-This is a production-oriented scaffold. Some features are UI-ready but require real backend and SDK configuration.
+A public website URL or APK download link will only exist after real deployment/build in a platform and Android Studio environment.

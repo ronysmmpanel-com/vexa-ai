@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppLayout } from './components/AppLayout';
 import { DailyPage } from './pages/DailyPage';
@@ -12,7 +12,6 @@ import type { ThemeMode } from './types';
 
 export default function App() {
   const [theme, setTheme] = useState<ThemeMode>('dark');
-
   const value = useMemo(() => ({ theme, setTheme }), [theme]);
 
   return (
@@ -33,7 +32,7 @@ export default function App() {
 }
 
 const AppContext = {
-  Provider: ({ children, value }: { children: React.ReactNode; value: { theme: ThemeMode; setTheme: (theme: ThemeMode) => void } }) => {
+  Provider: ({ children, value }: { children: ReactNode; value: { theme: ThemeMode; setTheme: (theme: ThemeMode) => void } }) => {
     document.body.dataset.theme = value.theme;
     return <>{children}</>;
   }
